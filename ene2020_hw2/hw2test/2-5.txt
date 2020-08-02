@@ -1,0 +1,89 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t1 t2 answer =
+  let v = count_string t1 t2 in
+  (equals v answer)
+
+
+[Test]
+let t1a1 : string = "ocaml" in
+let t1a2 : string = "oc" in
+test t1a1 t1a2 1
+
+[Value]
+true
+
+[Test]
+let t2a1 : string = "   " in
+let t2a2 : string = " " in
+test t2a1 t2a2 3
+
+[Value]
+true
+
+[Test]
+let t3a1 : string = "   " in
+let t3a2 : string = "" in
+test t3a1 t3a2 0
+
+[Value]
+true
+
+[Test]
+let t4a1 : string = "someString" in
+let t4a2 : string = "" in
+test t4a1 t4a2 0
+
+[Value]
+true
+
+[Test]
+let t5a1 : string = "null" in
+let t5a2 : string = "u" in
+test t5a1 t5a2 1
+
+[Value]
+true
+
+[Test]
+let t6a1 : string = "[[],[]]" in
+let t6a2 : string = "[]" in
+test t6a1 t6a2 2
+
+[Value]
+true
+
+[Test]
+let t7a1 : string = "IamVeryL0ngString" in
+let t7a2 : string = "noSuchString" in
+test t7a1 t7a2 0
+
+[Value]
+true
+
+[Test]
+let t8a1 : string = "aaa a aa aa aaaaaaa" in
+let t8a2 : string = "a a" in
+test t8a1 t8a2 4
+
+[Value]
+true
+
+[Test]
+let t9a1 : string = "hohohohohohohoho" in
+let t9a2 : string = "hohoho" in
+test t9a1 t9a2 6
+
+[Value]
+true
+
+[Test]
+let t10a1 : string = "T0mt0m70mtomTomTOMtoM" in
+let t10a2 : string = "tOm" in
+test t10a1 t10a2 0
+
+[Value]
+true

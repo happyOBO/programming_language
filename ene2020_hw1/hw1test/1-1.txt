@@ -1,0 +1,43 @@
+[Header]
+
+[Test]
+rev_append [] []
+
+[Value]
+[]
+
+[Test]
+rev_append [1;2;4] [6;3;9]
+
+[Value]
+[4; 2; 1; 6; 3; 9]
+
+[Test]
+rev_append [] [7;12;55]
+
+[Value]
+[7; 12; 55]
+
+[Test]
+rev_append [123;78;22] []
+
+[Value]
+[22; 78; 123]
+
+[Test]
+rev_append ["hello";"pineapple";"angle"] ["proposal";"sandwitch"]
+
+[Value]
+["angle"; "pineapple"; "hello"; "proposal"; "sandwitch"]
+
+[Test]
+rev_append [[1;2;5];[];[223;72;3]] [[7;3];[27]]
+
+[Value]
+[[223; 72; 3]; []; [1; 2; 5]; [7; 3]; [27]]
+
+[Test]
+rev_append [(12,'a');(33,'c')] [(45,'d');(66,'f')]
+
+[Value]
+[(33, 'c'); (12, 'a'); (45, 'd'); (66, 'f')]

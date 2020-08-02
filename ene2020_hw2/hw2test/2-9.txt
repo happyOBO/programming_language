@@ -1,0 +1,51 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t1 answer =
+  let v = selflove t1 in
+  (equals v answer)
+
+
+[Test]
+let t1 : (string * string) list = [("A","B");("B","A");("B","E");("D","B");("D","E");("F","F");("A","G");("G","B");("A","E");("E","E");] in
+test t1 5
+
+[Value]
+true
+
+[Test]
+let t2 : (string * string) list = [("A","C");("C","H");("H","G");] in
+test t2 0
+
+[Value]
+true
+
+[Test]
+let t3 : (string * string) list = [("A","B");("B","B");("C","A");("B","C")] in
+test t3 3
+
+[Value]
+true
+
+[Test]
+let t4 : (string * string) list = [("A","A");("B","C");("B","D");("C","D")] in
+test t4 1
+
+[Value]
+true
+
+[Test]
+let t5 : (string * string) list = [("A","B");("B","C");("C","D");("D","E");("E","F");("F","G");("G","H");("H","I");("I","J");("J","A");] in
+test t5 10
+
+[Value]
+true
+
+[Test]
+let t6 : (string * string) list = [("A","B");("B","C");("C","D");("D","E");("E","F");("F","F");("G","H");("H","I");("I","J");("J","A");] in
+test t6 1
+
+[Value]
+true

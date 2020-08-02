@@ -1,0 +1,58 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t1 answer =
+  let v = check t1 in
+  (equals v answer)
+
+
+[Test]
+let t1 : btree = Node(1, Empty, Empty) in
+test t1 true
+
+[Value]
+true
+
+[Test]
+let t2 : btree = Node (10, Node (3, Empty, Node (12, Empty, Empty)), Node (123, Node (15, Empty, Empty), Empty)) in
+test t2 true
+
+[Value]
+true
+
+[Test]
+let t3 : btree = Node (17, Node (22, Node (45, Node (14, Empty, Empty), Empty), Empty), Empty) in
+test t3 false
+
+[Value]
+true
+
+[Test]
+let t4 : btree = Node (115, Node (14, Empty, Empty), Node (33, Empty, Node (17, Empty, Node (23, Empty, Empty)))) in
+test t4 false
+
+[Value]
+true
+
+[Test]
+let t5 : btree = Node (15, Node (-2, Empty, Empty), Node (11, Node (0, Empty, Empty), Empty)) in
+test t5 true
+
+[Value]
+true
+
+[Test]
+let t6 : btree = Node (111, Node (123, Node (33, Node (-5, Node (12, Empty, Empty), Empty), Empty), Node (-125, Empty, Empty)), Node (22, Empty, Node (99, Empty, Empty))) in
+test t6 false
+
+[Value]
+true
+
+[Test]
+let t7 : btree = Node (11, Empty, Node (15, Node (12, Empty, Empty), Node (55, Node (23, Empty, Empty), Empty))) in
+test t7 false
+
+[Value]
+true

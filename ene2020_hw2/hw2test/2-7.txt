@@ -1,0 +1,65 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t1 answer =
+  let v = uniq t1 in
+  (equals v answer)
+
+
+[Test]
+let t1 : 'a list = [[];[];[[]];[[];[]]] in
+test t1 [[];[[]];[[];[]]]
+
+[Value]
+true
+
+[Test]
+let t2 : 'a list = [1;2;3;4;5;5;5;5;1;2;3;2;] in
+test t2 [1;2;3;4;5]
+
+[Value]
+true
+
+[Test]
+let t3 : 'a list = ["";" ";"";"  ";"   "] in
+test t3 ["";" ";"  ";"   "]
+
+[Value]
+true
+
+[Test]
+let t4 : 'a list = [] in
+test t4 []
+
+[Value]
+true
+
+[Test]
+let t5 : 'a list = ["test";"case";"case";"test";"te";"st"] in
+test t5 ["test";"case";"te";"st"]
+
+[Value]
+true
+
+[Test]
+let t6 : 'a list = [0;0;0;0;0;0;0;0;0;0;0;0] in
+test t6 [0]
+
+[Value]
+true
+
+[Test]
+let t7 : 'a list = ["IamAlone"] in
+test t7 ["IamAlone"]
+
+[Value]
+true
+
+[Test]
+let t8 : 'a list = [3.1;3.14;3.141;3.1415;3.14159;3.141592] in
+test t8 [3.1;3.14;3.141;3.1415;3.14159;3.141592]
+
+[Value]
+true

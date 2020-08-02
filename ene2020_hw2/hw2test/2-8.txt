@@ -1,0 +1,53 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t1 t2 answer =
+  let v = likes t1 t2 in
+  (equals v answer)
+
+let r1 : (string * string) list = [("A","B");("B","A");("B","E");("D","B");("D","E");("F","F");("A","G");("G","B");("A","E");("E","E");]
+
+
+[Test]
+test r1 "A" 4
+
+[Value]
+true
+
+[Test]
+test r1 "B" 4
+
+[Value]
+true
+
+[Test]
+test r1 "C" 0
+
+[Value]
+true
+
+[Test]
+test r1 "D" 4
+
+[Value]
+true
+
+[Test]
+test r1 "E" 1
+
+[Value]
+true
+
+[Test]
+test r1 "F" 1
+
+[Value]
+true
+
+[Test]
+test r1 "G" 4
+
+[Value]
+true

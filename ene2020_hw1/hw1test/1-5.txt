@@ -1,0 +1,49 @@
+[Header]
+
+[Test]
+height Empty
+
+[Value]
+0
+
+[Test]
+height (Node (10, Node (3, Empty, Node (12, Empty, Empty)), Node (123, Node (15, Empty, Empty), Empty))) 
+
+[Value]
+3
+
+[Test]
+height (Node (17, Node (22, Node (45, Node (14, Empty, Empty), Empty), Empty), Empty))
+
+[Value]
+4
+
+[Test]
+height (Node (115, Node (14, Empty, Empty), Node (33, Empty, Node (17, Empty, Node (23, Empty, Empty)))))
+
+[Value]
+4
+
+[Test]
+height (Node (15, Node (-2, Empty, Empty), Node (11, Node (0, Empty, Empty), Empty)))
+
+[Value]
+3
+
+[Test]
+height (Node (111, Node (123, Node (33, Node (-5, Node (12, Empty, Empty), Empty), Empty), Node (-125, Empty, Empty)), Node (22, Empty, Node (99, Empty, Empty))))
+
+[Value]
+5
+
+[Test]
+height (Node (11, Empty, Node (15, Node (12, Empty, Empty), Node (55, Node (23, Empty, Empty), Empty))))
+
+[Value]
+4
+
+[Test]
+height (Node (0, Empty, Empty))
+
+[Value]
+1

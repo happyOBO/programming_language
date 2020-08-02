@@ -1,0 +1,44 @@
+[Header]
+
+[Test]
+cartesian [1;2;3] []
+
+[Value]
+[]
+
+[Test]
+cartesian [] [4;5;6]
+
+[Value]
+[]
+
+[Test]
+cartesian [1;2;3] [4;5;6]
+
+[Value]
+[(1, 4); (1, 5); (1, 6); (2, 4); (2, 5); (2, 6); (3, 4); (3, 5); (3, 6)]
+
+[Test]
+cartesian ['a';'b';'c'] [4;5;6]
+
+[Value]
+[('a', 4); ('a', 5); ('a', 6); ('b', 4); ('b', 5); ('b', 6); ('c', 4);
+ ('c', 5); ('c', 6)]
+
+[Test]
+cartesian [true;false] [4;5;6]
+
+[Value]
+[(true, 4); (true, 5); (true, 6); (false, 4); (false, 5); (false, 6)]
+
+[Test]
+cartesian [true;false;false] [[1;2;3];[1;4];[5]]
+
+[Value]
+[(true, [1; 2; 3]); (true, [1; 4]); (true, [5]); (false, [1; 2; 3]); (false, [1; 4]); (false, [5]); (false, [1; 2; 3]); (false, [1; 4]); (false, [5])]
+
+[Test]
+cartesian ["empty"] [[];[]]
+
+[Value]
+[("empty", []); ("empty", [])]

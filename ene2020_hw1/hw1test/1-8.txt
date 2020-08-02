@@ -1,0 +1,49 @@
+[Header]
+
+[Test]
+(iter 10 (fun x -> x + 2)) 7
+
+[Value]
+27
+
+[Test]
+(iter 8 (fun x -> x mod 12)) 12
+
+[Value]
+0
+
+[Test]
+(iter 2 (fun x -> x@x)) [12;23]
+
+[Value]
+[12; 23; 12; 23; 12; 23; 12; 23]
+
+[Test]
+(iter 12 (fun x -> not x)) true
+
+[Value]
+true
+
+[Test]
+(iter 4 (fun x -> x * (x+1))) 2
+
+[Value]
+3263442
+
+[Test]
+(iter 3 (fun x -> x - x mod 2)) 7
+
+[Value]
+6
+
+[Test]
+(iter 8 (fun x -> x * (x-1))) 0
+
+[Value]
+0
+
+[Test]
+(iter 2 (fun x -> x)) 12
+
+[Value]
+12

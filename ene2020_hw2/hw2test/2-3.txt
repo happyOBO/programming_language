@@ -1,0 +1,79 @@
+[Header]
+
+let equals v1 v2 = 
+    v1 = v2
+
+let test t answer =
+  let v = to_list t in
+  (equals v answer)
+
+
+[Test]
+let t1 : string = "ocaml" in
+test t1 ['o';'c';'a';'m';'l']
+
+[Value]
+true
+
+[Test]
+let t2 : string = "PL" in
+test t2 ['P';'L';]
+
+[Value]
+true
+
+[Test]
+let t3 : string = "" in
+test t3 []
+
+[Value]
+true
+
+[Test]
+let t4 : string = "12+3478" in
+test t4 ['1';'2';'+';'3';'4';'7';'8';]
+
+[Value]
+true
+
+[Test]
+let t5 : string = "The brown fox" in
+test t5 ['T';'h';'e';' ';'b';'r';'o';'w';'n';' ';'f';'o';'x';]
+
+[Value]
+true
+
+[Test]
+let t6 : string = "     " in
+test t6 [' ';' ';' ';' ';' ']
+
+[Value]
+true
+
+[Test]
+let t7 : string = "(* comment *)" in
+test t7 ['(';'*';' ';'c';'o';'m';'m';'e';'n';'t';' ';'*';')';]
+
+[Value]
+true
+
+[Test]
+let t8 : string = "__--+/\\~`" in
+test t8 ['_';'_';'-';'-';'+';'/';'\\';'~';'`';]
+
+[Value]
+true
+
+[Test]
+let t9 : string = "Stay @ home" in
+test t9 ['S';'t';'a';'y';' ';'@';' ';'h';'o';'m';'e']
+
+[Value]
+true
+
+[Test]
+let t10 : string = "\x00\x00\x00" in
+test t10 ['\x00';'\x00';'\x00';]
+
+[Value]
+true

@@ -1,0 +1,49 @@
+[Header]
+
+[Test]
+notexists 1 Empty
+
+[Value]
+true
+
+[Test]
+notexists 15 (Node (10, Node (3, Empty, Node (12, Empty, Empty)), Node (123, Node (15, Empty, Empty), Empty))) 
+
+[Value]
+false
+
+[Test]
+notexists 1 (Node (17, Node (22, Node (45, Node (14, Empty, Empty), Empty), Empty), Empty))
+
+[Value]
+true
+
+[Test]
+notexists 17 (Node (115, Node (14, Empty, Empty), Node (33, Empty, Node (17, Empty, Node (23, Empty, Empty)))))
+
+[Value]
+false
+
+[Test]
+notexists (-23) (Node (15, Node (-2, Empty, Empty), Node (11, Node (0, Empty, Empty), Empty)))
+
+[Value]
+true
+
+[Test]
+notexists (-125) (Node (111, Node (123, Node (33, Node (-5, Node (12, Empty, Empty), Empty), Empty), Node (-125, Empty, Empty)), Node (22, Empty, Node (99, Empty, Empty))))
+
+[Value]
+false
+
+[Test]
+notexists 0 (Node (11, Empty, Node (15, Node (12, Empty, Empty), Node (55, Node (23, Empty, Empty), Empty))))
+
+[Value]
+true
+
+[Test]
+notexists 0 (Node (0, Empty, Empty))
+
+[Value]
+false

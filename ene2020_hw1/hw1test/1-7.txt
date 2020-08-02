@@ -1,0 +1,49 @@
+[Header]
+
+[Test]
+fold3 (fun a b c d -> a + b + c + d) 10 [33;67;12;33] [10;23;84;57] [11;55;23;58]
+
+[Value]
+476
+
+[Test]
+fold3 (fun a b c d -> (-a) + b + c + d) 4 [11;63;-45;22] [75;123;-44;1] [55;24;20;3]
+
+[Value]
+168
+
+[Test]
+fold3 (fun a b c d -> a + b * c + d) 12 [24;67;1;77;23;54] [11;3;8;0;22;13] [123;55;37;89;2;45]
+
+[Value]
+2044
+
+[Test]
+fold3 (fun a b c d -> a * b * c * d) 55 [] [] []
+
+[Value]
+55
+
+[Test]
+fold3 (fun a b c d -> (a * b * c + d) mod 7) 33 [12;33] [10;7] [5;12]
+
+[Value]
+5
+
+[Test]
+fold3 (fun a b c d -> (a mod 3) + b + c + d) 5 [12;567;33;0] [123;44;6;33] [116;76;223;8]
+
+[Value]
+43
+
+[Test]
+fold3 (fun a b c d -> if b then a + c else a + d) 34 [true;false;false;true] [12;3;4;77] [11;23;6;100]
+
+[Value]
+152
+
+[Test]
+fold3 (fun a b c d -> if b then a else c + d) 55 [true;true;false;false;true] [111;63;88;123;98] [0;23;778;34;6]
+
+[Value]
+157
